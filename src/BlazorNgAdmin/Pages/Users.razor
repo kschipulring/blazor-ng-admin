@@ -1,0 +1,82 @@
+@page "/users"
+@using BlazorNgAdmin.Models
+@using BlazorNgAdmin.Services
+@inject ApiService ApiService
+@inject NavigationManager Navigation
+
+<PageTitle>Users</PageTitle>
+
+<h1>Users Management</h1>
+
+@if (isLoading)
+{
+    <p><em>Loading users...</em></p>
+}
+else if (users == null || users.Count == 0)
+{
+    <p><em>No users found.</em></p>
+}
+else
+{
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Website</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in users)
+            {
+                <tr>
+                    <td>@user.Id</td>
+                    <td>@user.Name</td>
+                    <td>@user.Username</td>
+                    <td>@user.Email</td>
+                    <td>@user.Phone</td>
+                    <td>@user.Website</td>
+                    <td>
+                        <button class="btn btn-sm btn-info" @onclick="() => ViewUser(user.Id)">View</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<User>? users;
+    private bool isLoading = true;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadUsers();
+    }
+
+    private async Task LoadUsers()
+    {
+        isLoading = true;
+        try
+        {
+            users = await ApiService.GetUsersAsync();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error loading users: {ex.Message}");
+        }
+        finally
+        {
+            isLoading = false;
+        }
+    }
+
+    private void ViewUser(int id)
+    {
+        Navigation.NavigateTo($"/users/{id}");
+    }
+}
