@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "postId": 1,
+    "name": "Great article!",
+    "email": "alice@example.com",
+    "body": "This is a very informative article about Blazor. Thanks for sharing!"
+  },
+  {
+    "id": 2,
+    "postId": 1,
+    "name": "Question about WebAssembly",
+    "email": "charlie@example.com",
+    "body": "How does WebAssembly performance compare to JavaScript in real-world scenarios?"
+  },
+  {
+    "id": 3,
+    "postId": 2,
+    "name": "REST API best practices",
+    "email": "david@example.com",
+    "body": "Don't forget about proper error handling and authentication in REST APIs!"
+  }
+]

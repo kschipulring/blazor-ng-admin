@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "userId": 1,
+    "title": "Introduction to Blazor WebAssembly",
+    "body": "Blazor WebAssembly is a framework for building interactive web UIs using C# instead of JavaScript. It runs entirely in the browser via WebAssembly."
+  },
+  {
+    "id": 2,
+    "userId": 1,
+    "title": "Understanding REST APIs",
+    "body": "REST APIs are a standard way to build web services that can be consumed by various clients. They use HTTP methods like GET, POST, PUT, and DELETE."
+  },
+  {
+    "id": 3,
+    "userId": 2,
+    "title": "Building Admin Panels with Blazor",
+    "body": "Admin panels are essential for managing application data. Blazor makes it easy to create rich, interactive admin interfaces with C#."
+  },
+  {
+    "id": 4,
+    "userId": 2,
+    "title": "CRUD Operations Explained",
+    "body": "CRUD stands for Create, Read, Update, and Delete - the four basic operations for persistent storage in any application."
+  },
+  {
+    "id": 5,
+    "userId": 3,
+    "title": "Modern Web Development",
+    "body": "Modern web development involves using frameworks and tools that make it easier to build complex applications with great user experiences."
+  }
+]
