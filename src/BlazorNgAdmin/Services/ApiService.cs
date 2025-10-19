@@ -34,7 +34,7 @@ public class ApiService
     public async Task<Post?> CreatePostAsync(Post post)
     {
         var posts = await GetPostsAsync();
-        post.Id = posts.Max(p => p.Id) + 1;
+        post.Id = posts.Count > 0 ? posts.Max(p => p.Id) + 1 : 1;
         posts.Add(post);
         return post;
     }
